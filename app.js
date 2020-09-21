@@ -1,0 +1,7 @@
+require('./db')
+const app=require('express')()
+const bodyParser=require('body-parser')
+var postMessageRouters=require('./controllers/postMessagecontroller')
+app.use(bodyParser.json())
+app.use('/postmessages',postMessageRouters)
+app.listen(4000,()=>console.log("Server started at:4000"))
